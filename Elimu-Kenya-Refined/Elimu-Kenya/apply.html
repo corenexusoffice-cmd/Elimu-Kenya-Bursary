@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — Elimu Kenya Bursary</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Elimu Kenya Bursary</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="apply.html">Apply</a>
+      <a href="pay.html">Pay</a>
+      <a href="status.html">Check Status</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Bursary Application</h1>
+  <p>Fill in all fields. You'll receive a reference number to use for payment.</p>
+
+  <form id="applyForm" class="form">
+    <fieldset>
+      <legend>Institution</legend>
+      <label>Institution Type
+        <select name="instType" required>
+          <option value="">— select —</option>
+          <option>University</option>
+          <option>College</option>
+          <option>TVET</option>
+          <option>Secondary</option>
+        </select>
+      </label>
+      <label>Institution Name
+        <input type="text" name="institution" maxlength="150" required>
+      </label>
+      <label>Year of Study
+        <input type="text" name="year" maxlength="20" required>
+      </label>
+      <label>Course
+        <input type="text" name="course" maxlength="120" required>
+      </label>
+      <label>HELB Number (if any)
+        <input type="text" name="helb" maxlength="30">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Bursary Band</legend>
+      <label>Household Income Band
+        <select name="band" id="band" required>
+          <option value="">— select —</option>
+          <option value="1">Band 1 — Very needy</option>
+          <option value="2">Band 2 — Needy</option>
+          <option value="3">Band 3 — Moderate</option>
+          <option value="4">Band 4 — Less needy</option>
+          <option value="5">Band 5 — Least needy</option>
+        </select>
+      </label>
+      <p id="bandInfo" class="band-info"></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Student Details</legend>
+      <label>Full Name
+        <input type="text" name="student" maxlength="120" required>
+      </label>
+      <label>Year of Birth
+        <input type="number" name="birthYear" min="1950" max="2020">
+      </label>
+      <label>Phone
+        <input type="tel" name="phone" maxlength="25" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" maxlength="120" required>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Location</legend>
+      <label>County
+        <input type="text" name="county" maxlength="40" required>
+      </label>
+      <label>Sub-County
+        <input type="text" name="subcounty" maxlength="120">
+      </label>
+      <label>Town
+        <input type="text" name="town" maxlength="120">
+      </label>
+      <label>Location
+        <input type="text" name="location" maxlength="120">
+      </label>
+      <label>Sub-Location
+        <input type="text" name="sublocation" maxlength="120">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Guardian</legend>
+      <label>Guardian Name
+        <input type="text" name="guardian" maxlength="120">
+      </label>
+      <label>Relationship
+        <input type="text" name="relationship" maxlength="20">
+      </label>
+      <label>Guardian Condition (e.g. unemployed, sick)
+        <input type="text" name="condition" maxlength="80">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Story</legend>
+      <label>Briefly explain your situation (max 600 chars)
+        <textarea name="story" maxlength="600" rows="5"></textarea>
+      </label>
+    </fieldset>
+
+    <button type="submit" class="btn-primary">Submit Application</button>
+    <p id="applyMsg" class="msg"></p>
+  </form>
+
+  <div id="applySuccess" class="success-box" hidden>
+    <h2>✅ Application Received</h2>
+    <p>Your reference number is:</p>
+    <p class="ref-code" id="refCode"></p>
+    <p>Amount awarded: <strong id="refAmount"></strong></p>
+    <p>Processing fee: <strong id="refFee"></strong></p>
+    <p>Keep this reference safe. Use it on the <a href="pay.html">Pay</a> page.</p>
+    <a href="pay.html" class="btn-primary">Proceed to Payment</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; Elimu Kenya Bursary</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="apply.js"></script>
+</body>
+</html>
