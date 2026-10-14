@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Status — Elimu Kenya Bursary</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Elimu Kenya Bursary</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="apply.html">Apply</a>
+      <a href="pay.html">Pay</a>
+      <a href="status.html">Check Status</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Check Application Status</h1>
+  <p>Enter your reference number to see the current status.</p>
+
+  <form id="statusForm" class="form">
+    <label>Application Reference
+      <input type="text" name="ref" maxlength="20" placeholder="EK-XXXXXXXX" required>
+    </label>
+    <button type="submit" class="btn-primary">Check Status</button>
+    <p id="statusMsg" class="msg"></p>
+  </form>
+
+  <div id="statusResult" class="success-box" hidden>
+    <h2>Status</h2>
+    <p class="ref-code" id="statusValue"></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; Elimu Kenya Bursary</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="status.js"></script>
+</body>
+</html>
