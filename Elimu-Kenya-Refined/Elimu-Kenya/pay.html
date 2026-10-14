@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pay — Elimu Kenya Bursary</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Elimu Kenya Bursary</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="apply.html">Apply</a>
+      <a href="pay.html">Pay</a>
+      <a href="status.html">Check Status</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Submit Payment</h1>
+  <p>Pay the processing fee via M-Pesa Send Money, then submit the confirmation code below.</p>
+
+  <div class="info-box">
+    <p><strong>M-Pesa Paybill / Send Money to:</strong></p>
+    <p class="big-number">0700 000 000</p>
+    <p>Then enter the 10-character M-Pesa confirmation code below.</p>
+  </div>
+
+  <form id="payForm" class="form">
+    <label>Application Reference
+      <input type="text" name="ref" maxlength="20" placeholder="EK-XXXXXXXX" required>
+    </label>
+    <label>M-Pesa Confirmation Code (10 chars)
+      <input type="text" name="code" maxlength="10" minlength="10" placeholder="e.g. QJ12AB34CD" required>
+    </label>
+    <label>Phone Used to Pay
+      <input type="tel" name="phone" maxlength="25" required>
+    </label>
+    <button type="submit" class="btn-primary">Submit Payment</button>
+    <p id="payMsg" class="msg"></p>
+  </form>
+
+  <div id="paySuccess" class="success-box" hidden>
+    <h2>✅ Payment Submitted</h2>
+    <p>Your payment is now pending verification. We'll review it and update your application status.</p>
+    <a href="status.html" class="btn-primary">Check Status</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; Elimu Kenya Bursary</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="pay.js"></script>
+</body>
+</html>
