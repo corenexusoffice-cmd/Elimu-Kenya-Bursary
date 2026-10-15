@@ -21,7 +21,7 @@
 
 <main class="container">
   <h1>Bursary Application</h1>
-  <p>Fill in all fields. You'll receive a reference number to use for payment.</p>
+  <p>Fill in all fields accurately. After your application is reviewed, you will receive a reference number and the processing fee for your band.</p>
 
   <form id="applyForm" class="form">
     <fieldset>
@@ -119,24 +119,46 @@
       </label>
     </fieldset>
 
-    <button type="submit" class="btn-primary">Submit Application</button>
+    <button type="submit" class="btn-primary">Continue to Payment</button>
     <p id="applyMsg" class="msg"></p>
   </form>
 
-  <div id="applySuccess" class="success-box" hidden>
-    <h2>✅ Application Received</h2>
-    <p>Your reference number is:</p>
-    <p class="ref-code" id="refCode"></p>
-    <p>Amount awarded: <strong id="refAmount"></strong></p>
-    <p>Processing fee: <strong id="refFee"></strong></p>
-    <p>Keep this reference safe. Use it on the <a href="pay.html">Pay</a> page.</p>
-    <a href="pay.html" class="btn-primary">Proceed to Payment</a>
+  <!-- Payment step: appears after application details are submitted -->
+  <div id="paymentStep" class="form" hidden>
+    <h2 style="color: var(--primary); margin-bottom: 8px;">Payment of Processing Fee</h2>
+    <p>Your application has been received. To complete your submission, pay the processing fee below by <strong>M-Pesa Send Money</strong>, then paste the M-Pesa confirmation message.</p>
+
+    <div class="info-box">
+      <p><strong>Send Money to:</strong></p>
+      <p class="big-number" id="payNumber">0732 532 860</p>
+      <button type="button" class="btn-primary" id="copyNumber" style="margin-top: 8px;">Copy number</button>
+      <p style="margin-top: 12px; font-size: 0.9rem;">Reference: <strong id="payRefDisplay">—</strong></p>
+      <p style="font-size: 0.9rem;">Amount: <strong id="payFeeDisplay">—</strong></p>
+    </div>
+
+    <label>Paste your M-Pesa confirmation message
+      <textarea id="mpesaMessage" rows="4" placeholder="Paste the full M-Pesa SMS here…" required></textarea>
+    </label>
+
+    <button type="button" class="btn-primary" id="confirmPayment">Confirm Payment</button>
+    <p id="payStepMsg" class="msg"></p>
+  </div>
+
+  <!-- Celebration popup -->
+  <div id="celebration" class="celebration" hidden>
+    <div class="celebration-card">
+      <div class="celebration-emoji">🎉</div>
+      <h2>Application Submitted Successfully</h2>
+      <p>You have successfully applied for the <strong>2026 Bursary</strong>. Your application is currently under review.</p>
+      <p class="ref-code" id="celebrateRef"></p>
+      <a href="status.html" class="btn-primary">Check Status</a>
+    </div>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; Elimu Kenya Bursary</p>
+    <p>&copy; Elimu Kenya Bursary. All rights reserved.</p>
   </div>
 </footer>
 
