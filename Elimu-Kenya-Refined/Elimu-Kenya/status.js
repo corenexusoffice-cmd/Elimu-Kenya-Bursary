@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('statusForm');
   const msg = document.getElementById('statusMsg');
@@ -5,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const valueEl = document.getElementById('statusValue');
 
   const labels = {
-    pending_payment:    '⏳ Pending payment',
-    payment_submitted:  '🔍 Payment under review',
-    verified:           '✅ Verified — bursary approved',
-    rejected:           '❌ Rejected'
+    pending_payment:   'Pending payment',
+    payment_submitted: 'Payment under review',
+    verified:          'Verified — bursary approved',
+    rejected:          'Not approved'
   };
 
   form.addEventListener('submit', async (e) => {
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const status = await window.rpc('application_status', { p_ref: ref });
       if (!status) {
-        msg.textContent = 'Reference not found.';
+        msg.textContent = 'Reference not found. Please check and try again.';
         msg.className = 'msg error';
         return;
       }
