@@ -20,21 +20,29 @@
 </header>
 
 <main class="container">
-  <h1>Submit Payment</h1>
-  <p>Pay the processing fee via M-Pesa Send Money, then submit the confirmation code below.</p>
+  <h1>Payment of Processing Fee</h1>
+  <p>Pay the processing fee by <strong>M-Pesa Send Money</strong>, then paste your M-Pesa confirmation message below.</p>
 
   <div class="info-box">
-    <p><strong>M-Pesa Paybill / Send Money to:</strong></p>
-    <p class="big-number">0700 000 000</p>
-    <p>Then enter the 10-character M-Pesa confirmation code below.</p>
+    <p><strong>Send Money to:</strong></p>
+    <p class="big-number" id="payNumber">0732 532 860</p>
+    <button type="button" class="btn-primary" id="copyNumber" style="margin-top: 8px;">Copy number</button>
+    <p style="margin-top: 12px; font-size: 0.9rem;">
+      Use your application reference as the reason for payment, then paste your M-Pesa confirmation message below.
+    </p>
+  </div>
+
+  <div class="feature" style="margin-bottom: 24px;">
+    <h3>Other payment methods</h3>
+    <p><strong>Paybill, Bank transfer, Card and Airtel Money are currently unavailable.</strong> This means of payment is unavailable for now due to some technical issues. Our technicians are working on it and we will update you once the fix is complete. Please use Send Money as a verified means of payment for now.</p>
   </div>
 
   <form id="payForm" class="form">
     <label>Application Reference
       <input type="text" name="ref" maxlength="20" placeholder="EK-XXXXXXXX" required>
     </label>
-    <label>M-Pesa Confirmation Code (10 chars)
-      <input type="text" name="code" maxlength="10" minlength="10" placeholder="e.g. QJ12AB34CD" required>
+    <label>Paste your M-Pesa confirmation message
+      <textarea name="message" rows="4" placeholder="Paste the full M-Pesa SMS here…" required></textarea>
     </label>
     <label>Phone Used to Pay
       <input type="tel" name="phone" maxlength="25" required>
@@ -52,7 +60,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; Elimu Kenya Bursary</p>
+    <p>&copy; Elimu Kenya Bursary. All rights reserved.</p>
   </div>
 </footer>
 
