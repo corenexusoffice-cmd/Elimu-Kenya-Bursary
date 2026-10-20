@@ -21,27 +21,106 @@
 
 <main class="container">
   <h1>Bursary Application</h1>
-  <p>Fill in all fields accurately. After your application is reviewed, you will receive a reference number and the processing fee for your band.</p>
+  <p>Complete all sections accurately. After your application is reviewed, you will receive a reference number and the processing fee for your band.</p>
 
   <form id="applyForm" class="form">
     <fieldset>
       <legend>Institution</legend>
       <label>Institution Type
-        <select name="instType" required>
+        <select name="instType" id="instType" required>
           <option value="">— select —</option>
-          <option>University</option>
-          <option>College</option>
-          <option>TVET</option>
-          <option>Secondary</option>
+          <option value="University">University</option>
+          <option value="TVET">TVET</option>
         </select>
       </label>
       <label>Institution Name
-        <input type="text" name="institution" maxlength="150" required>
+        <select name="institution" id="institution" required>
+          <option value="">— select your institution —</option>
+          <optgroup label="Public Universities" id="uniGroup">
+            <option>Alupe University</option>
+            <option>Bomet University</option>
+            <option>Chuka University</option>
+            <option>Co-operative University of Kenya</option>
+            <option>Dedan Kimathi University of Technology</option>
+            <option>Egerton University</option>
+            <option>Garissa University</option>
+            <option>Jaramogi Oginga Odinga University of Science and Technology</option>
+            <option>Jomo Kenyatta University of Agriculture and Technology</option>
+            <option>Kaimosi Friends University</option>
+            <option>Karatina University</option>
+            <option>Kenyatta University</option>
+            <option>Kibabii University</option>
+            <option>Kirinyaga University</option>
+            <option>Kisii University</option>
+            <option>Laikipia University</option>
+            <option>Maasai Mara University</option>
+            <option>Machakos University</option>
+            <option>Maseno University</option>
+            <option>Masinde Muliro University of Science and Technology</option>
+            <option>Meru University of Science and Technology</option>
+            <option>Moi University</option>
+            <option>Multimedia University of Kenya</option>
+            <option>Murang'a University of Technology</option>
+            <option>National Defence University-Kenya</option>
+            <option>Open University of Kenya</option>
+            <option>Pwani University</option>
+            <option>Rongo University</option>
+            <option>South Eastern Kenya University</option>
+            <option>Taita Taveta University</option>
+            <option>Technical University of Kenya</option>
+            <option>Technical University of Mombasa</option>
+            <option>Tharaka University</option>
+            <option>Tom Mboya University</option>
+            <option>University of Eldoret</option>
+            <option>University of Embu</option>
+            <option>University of Kabianga</option>
+            <option>University of Nairobi</option>
+          </optgroup>
+          <optgroup label="Public TVET Institutions" id="tvetGroup">
+            <option>Bumbe National Polytechnic</option>
+            <option>Bungoma National Polytechnic</option>
+            <option>Jeremiah Nyaga National Polytechnic</option>
+            <option>Kabete National Polytechnic</option>
+            <option>Kenya Coast National Polytechnic</option>
+            <option>Kenya School of TVET</option>
+            <option>Kiambu National Polytechnic</option>
+            <option>Kipsoen National Polytechnic</option>
+            <option>Kisii National Polytechnic</option>
+            <option>Kisumu National Polytechnic</option>
+            <option>Kitale National Polytechnic</option>
+            <option>Mawego National Polytechnic</option>
+            <option>Meru National Polytechnic</option>
+            <option>Morendat Institute of Oil and Gas National Polytechnic</option>
+            <option>Nairobi National Polytechnic</option>
+            <option>North Eastern National Polytechnic</option>
+            <option>Nyeri National Polytechnic</option>
+            <option>Ol'lessos National Polytechnic</option>
+            <option>Rift Valley National Polytechnic</option>
+            <option>Shamberere National Polytechnic</option>
+            <option>Siaya National Polytechnic</option>
+            <option>Sigalagala National Polytechnic</option>
+            <option>Taita Taveta National Polytechnic</option>
+            <option>The Kabete National Polytechnic</option>
+            <option>The Kenya Coast National Polytechnic</option>
+            <option>The Kipsoen National Polytechnic</option>
+            <option>The Kisii National Polytechnic</option>
+            <option>The Kisumu National Polytechnic</option>
+            <option>The Nyeri National Polytechnic</option>
+            <option>The Rift Valley National Polytechnic</option>
+            <option>The Shamberere National Polytechnic</option>
+            <option>The Siaya National Polytechnic</option>
+            <option>The Sigalagala National Polytechnic</option>
+            <option>The Tseikuru National Polytechnic</option>
+          </optgroup>
+        </select>
+      </label>
+      <label>Registration / Admission Number
+        <input type="text" name="regNumber" maxlength="30" placeholder="e.g. C01/1234/2024" required>
       </label>
       <label>Year of Study
         <input type="text" name="year" maxlength="20" required>
       </label>
-      <label>Course
+      <label>Course / Programme
         <input type="text" name="course" maxlength="120" required>
       </label>
       <label>HELB Number (if any)
@@ -114,7 +193,7 @@
 
     <fieldset>
       <legend>Your Story</legend>
-      <label>Briefly explain your situation (max 600 chars)
+      <label>Briefly explain your situation (max 600 characters)
         <textarea name="story" maxlength="600" rows="5"></textarea>
       </label>
     </fieldset>
@@ -147,7 +226,6 @@
   <!-- Celebration popup -->
   <div id="celebration" class="celebration" hidden>
     <div class="celebration-card">
-      <div class="celebration-emoji">🎉</div>
       <h2>Application Submitted Successfully</h2>
       <p>You have successfully applied for the <strong>2026 Bursary</strong>. Your application is currently under review.</p>
       <p class="ref-code" id="celebrateRef"></p>
