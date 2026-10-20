@@ -10,7 +10,8 @@
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="logo">Elimu Kenya Bursary</a>
-    <nav>
+    <button id="menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="apply.html">Apply</a>
       <a href="pay.html">Pay</a>
@@ -26,14 +27,9 @@
       <p>Apply for financial assistance to keep your education on track. Simple, transparent and fast.</p>
       <a href="apply.html" class="btn-primary">Apply Now</a>
 
-      <!-- Social proof / live statistics -->
-      <div class="hero-stats" style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
-        <span class="stat-badge" style="background: rgba(255,255,255,0.15); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 0.95rem; font-weight: 600;">
-          Over 4,632+ students have applied — don't be left out
-        </span>
-        <span class="stat-badge" style="background: rgba(255,255,255,0.15); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 0.95rem; font-weight: 600;">
-          Our goal: help over 10,000+ students across Kenya
-        </span>
+      <div class="hero-stats">
+        <span class="stat-badge">Over 4,632+ students have applied — don't be left out</span>
+        <span class="stat-badge">Our goal: help over 10,000+ students across Kenya</span>
       </div>
     </div>
   </section>
@@ -60,27 +56,22 @@
       <h3>Who can apply?</h3>
       <p>All Kenyan students currently enrolled in a recognised university or TVET institution who require financial assistance may apply. College and secondary school students are not eligible for this bursary.</p>
     </div>
-
     <div class="feature" style="margin-bottom: 12px;">
       <h3>Is there a processing fee?</h3>
       <p>Yes. A small non-refundable processing fee applies per application. The fee depends on your funding band and is shown during application.</p>
     </div>
-
     <div class="feature" style="margin-bottom: 12px;">
       <h3>How do I pay the fee?</h3>
       <p>Payment is made by M-Pesa Send Money to the official number shown on the payment page. After paying, submit your M-Pesa confirmation code to complete your application.</p>
     </div>
-
     <div class="feature" style="margin-bottom: 12px;">
       <h3>How long does review take?</h3>
       <p>Applications are reviewed after the processing fee is confirmed. You can check your status at any time using your application reference number.</p>
     </div>
-
     <div class="feature" style="margin-bottom: 12px;">
       <h3>How will I know the outcome?</h3>
       <p>Once your application is reviewed, your status will be updated on the <a href="status.html">Check Status</a> page. You will also be notified at the email and phone number you provided.</p>
     </div>
-
     <div class="feature">
       <h3>Do I need to pay again after applying?</h3>
       <p>No. The processing fee is paid once per application. Approved bursary funds are disbursed separately to your institution or via the official channel.</p>
@@ -95,5 +86,13 @@
     <p style="margin-top: 12px;">&copy; Elimu Kenya Bursary. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  document.getElementById('menu').addEventListener('click', function () {
+    var nav = document.getElementById('nav');
+    var open = nav.classList.toggle('open');
+    this.setAttribute('aria-expanded', String(open));
+  });
+</script>
 </body>
 </html>
