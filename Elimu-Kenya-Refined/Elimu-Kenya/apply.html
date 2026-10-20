@@ -10,7 +10,8 @@
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="logo">Elimu Kenya Bursary</a>
-    <nav>
+    <button id="menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="apply.html">Apply</a>
       <a href="pay.html">Pay</a>
@@ -36,7 +37,7 @@
       <label>Institution Name
         <select name="institution" id="institution" required>
           <option value="">— select your institution —</option>
-          <optgroup label="Public Universities" id="uniGroup">
+          <optgroup label="Public Universities">
             <option>Alupe University</option>
             <option>Bomet University</option>
             <option>Chuka University</option>
@@ -76,7 +77,7 @@
             <option>University of Kabianga</option>
             <option>University of Nairobi</option>
           </optgroup>
-          <optgroup label="Public TVET Institutions" id="tvetGroup">
+          <optgroup label="Public TVET Institutions">
             <option>Bumbe National Polytechnic</option>
             <option>Bungoma National Polytechnic</option>
             <option>Jeremiah Nyaga National Polytechnic</option>
@@ -202,17 +203,16 @@
     <p id="applyMsg" class="msg"></p>
   </form>
 
-  <!-- Payment step: appears after application details are submitted -->
   <div id="paymentStep" class="form" hidden>
-    <h2 style="color: var(--primary); margin-bottom: 8px;">Payment of Processing Fee</h2>
+    <h2>Payment of Processing Fee</h2>
     <p>Your application has been received. To complete your submission, pay the processing fee below by <strong>M-Pesa Send Money</strong>, then paste the M-Pesa confirmation message.</p>
 
     <div class="info-box">
       <p><strong>Send Money to:</strong></p>
       <p class="big-number" id="payNumber">0732 532 860</p>
-      <button type="button" class="btn-primary" id="copyNumber" style="margin-top: 8px;">Copy number</button>
-      <p style="margin-top: 12px; font-size: 0.9rem;">Reference: <strong id="payRefDisplay">—</strong></p>
-      <p style="font-size: 0.9rem;">Amount: <strong id="payFeeDisplay">—</strong></p>
+      <button type="button" class="btn-primary" id="copyNumber">Copy number</button>
+      <p>Reference: <strong id="payRefDisplay">—</strong></p>
+      <p>Amount: <strong id="payFeeDisplay">—</strong></p>
     </div>
 
     <label>Paste your M-Pesa confirmation message
@@ -223,7 +223,6 @@
     <p id="payStepMsg" class="msg"></p>
   </div>
 
-  <!-- Celebration popup -->
   <div id="celebration" class="celebration" hidden>
     <div class="celebration-card">
       <h2>Application Submitted Successfully</h2>
@@ -240,6 +239,13 @@
   </div>
 </footer>
 
+<script>
+  document.getElementById('menu').addEventListener('click', function () {
+    var nav = document.getElementById('nav');
+    var open = nav.classList.toggle('open');
+    this.setAttribute('aria-expanded', String(open));
+  });
+</script>
 <script src="config.js"></script>
 <script src="apply.js"></script>
 </body>
